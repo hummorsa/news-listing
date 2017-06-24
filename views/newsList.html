@@ -1,0 +1,29 @@
+<div class="news-container" ng-if="!requestError">
+    <ul id="news-list" class="news-cell" >
+        <div class="news-list-close-icon" ng-click="toggleLeftMenu()"></div>
+        <li ng-repeat="news in newsList" ng-click="loadContent($index)" ng-class="{selected:selectedIndex===$index}">
+            <img ng-src="https://demo.dotcms.com{{news.image}}">
+            <div class="news-list-item-details">
+                <h5>{{news.title}}</h5>
+                <span>{{news.sysPublishDate | ConvertDateFormat : 'MMM dd, yyyy'  }}</span>
+            </div>
+        </li>
+    </ul>
+    <div class="news-item-container news-cell" ng-show="currentNews">
+        <img class="news-item-container-header-image" ng-src="https://demo.dotcms.com{{currentNews.image}}">
+        <!--<img class="news-item-container-header-image" src="https://dummyimage.com/680x300.jpg"/> -->
+        <div class="news-item-header">
+            <h2>{{currentNews.title}}</h2>
+            <span>{{currentNews.sysPublishDate | ConvertDateFormat : 'MMM dd, yyyy'  }}</span>
+        </div>
+
+        <!--{{currentNews}} -->
+
+        <!--<img ng-src="http://demo.dotcms.com{{currentNews.image}}"> -->
+        <div class="news-item-story" ng-bind-html="currentNews.story">
+        </div>
+    </div>
+</div>
+<div class="errorMessage" ng-if="requestError">
+    <span>Error retrieving News. Please contact admin</span>
+</div>

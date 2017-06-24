@@ -1,0 +1,23 @@
+{
+  "name": "Grunt Angular Boilerplate",
+  "version": "0.1.1",
+  "ignore": [
+    "**/.*",
+    "build",
+    "speed",
+    "test",
+    "*.md",
+    "AUTHORS.txt",
+    "Gruntfile.js",
+    "package.json",
+    "bower.json"
+  ],
+  "devDependencies": {
+    "angular": "~1.6.4",
+    "angular-route": "~1.6.4",
+    "angular-sanitize": "~1.6.4"
+  },
+  "dependencies": {
+
+  }
+}

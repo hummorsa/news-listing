@@ -1,0 +1,136 @@
+
+.news-list-close-icon{
+    height: 40px;
+    display: none;
+}
+
+.news-list-close-icon:before{
+    display: inline-block;
+    content: "\00d7";
+    font-size: 30px;
+    padding:4px 9px;
+    cursor: pointer;
+    float: right;
+}
+
+.news-container {
+    border: 1px solid #E0E0E0;
+    width: 100%;
+    display: table;
+    box-sizing: border-box;
+}
+
+.news-cell{
+    display: table-cell;
+    vertical-align: top;
+
+}
+
+ul#news-list {
+    width:30%;
+    border-right: 1px solid #E0E0E0;
+}
+
+.news-list-item-details{
+    margin-left: 71px;
+}
+
+
+.news-list-item-details h5{
+    display: block; /* Fallback for non-webkit */
+    display: -webkit-box;
+    max-height: 45px; /* Fallback for non-webkit */
+    margin: 0 auto;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.news-list-item-details span{
+    color: #8c8c8c;
+    font-size: 12px;
+}
+
+ul#news-list li {
+    list-style: none;
+    padding: 10px;
+    min-height: 64px;
+    border-bottom: 1px solid #E0E0E0;
+    cursor: pointer;
+}
+
+ul#news-list li:last-child{
+    border-bottom: 0px;
+}
+
+ul#news-list li.selected{
+    background-color: #EDEDED;
+}
+
+ul#news-list li img{
+    display: block;
+    float: left;
+    margin-right: 10px;
+    border: 1px solid #8c8c8c;
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    filter: gray;
+    max-width: 60px;
+}
+
+ul#news-list li:hover img{
+    filter: none;
+    -webkit-filter: grayscale(0);
+}
+
+.news-item-container{
+    width: 70%;
+
+}
+
+
+.news-item-container-header-image{
+    min-width: 100%;
+    max-height: 300px;
+}
+
+.news-item-header{
+    padding: 10px;
+    background-color: #ADABAD;
+
+}
+
+.news-item-header h2{
+
+}
+
+
+.news-item-story{
+    padding: 10px;
+
+}
+
+
+@media only screen and (max-width: 667px) {
+
+    .news-list-close-icon{
+        display: block;
+    }
+
+    ul#news-list {
+        height: 100%;
+        width: 0px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
+
+    .news-item-container{
+        width: 100%;
+    }
+}
