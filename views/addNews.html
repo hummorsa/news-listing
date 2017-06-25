@@ -1,4 +1,34 @@
 <div>
+    <form name="addItem" class="add-news-form" ng-submit="validate()" novalidate>
+        <div>
+            <label>* Tittle:</label>
+            <input ng-model="item.title" placeholder="Tittle" required/>
+        </div>
+        <div>
+            <label>* Image:</label>
+            <input type="file" name="file" id="file" required/>
+           <!-- <input ng-model="item.image" placeholder="Select Image" type="file"/>  onchange="angular.element(this).scope().uploadFile(this.files)"-->
+        </div>
+        <div>
+            <label>* Story:</label>
+            <textarea ng-model="item.story" required ></textarea>
+        </div>
+        <div>
+            <label> </label>
+            <span>* Required</span>
+        </div>
+        <div class="add-user-error" ng-show="errorMessage">
+            <label> </label>
+            <span>{{errorMessage}}</span>
+        </div>
+        <div class="add-news-confirmation-buttons">
+            <input type="submit" value="Add"/>
+        </div>
+    </form>
 
-    Add news html
+
+
+
+
+    {{item}}
 </div>

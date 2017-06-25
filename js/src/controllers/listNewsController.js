@@ -7,6 +7,7 @@
 dotCMSApp.controller('listNewsController',['$scope', 'NewsService',function($scope, NewsService){
     $scope.headerButton.url = '/#!/addNews';
     $scope.headerButton.text='Add News';
+    $scope.headerButton.showMenu=true;
 
     NewsService.getNews().then(function(response){
         $scope.newsList = response.data.contentlets;

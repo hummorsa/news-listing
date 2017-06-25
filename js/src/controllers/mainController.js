@@ -8,7 +8,8 @@ dotCMSApp.controller('mainController', ['$scope','$location', function($scope,$l
 
     $scope.headerButton = {
         url:'/#!/addNews',
-        text:'Add News'
+        text:'Add News',
+        showMenu:true
     };
 
     $scope.cacheData = {
@@ -22,7 +23,5 @@ dotCMSApp.controller('mainController', ['$scope','$location', function($scope,$l
             document.getElementById('news-list').style.width='0px';
         }
     };
-
-
 
 }]);

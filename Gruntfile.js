@@ -158,17 +158,6 @@ module.exports = function(grunt) {
         }
       }
     },
-
-    coveralls: {
-      options: {
-        debug: true,
-        coverage_dir: 'test-coverage',
-        dryRun: false,
-        force: true,
-        recursive: true
-      }
-    },
-
     mkdir: {
       js: {
         options: {
@@ -191,8 +180,7 @@ module.exports = function(grunt) {
       'concat:services',
       'concat:filters',
       'concat:build',
-      'uglify:build',
-      'coveralls'
+      'uglify:build'
     ]);
   });
 

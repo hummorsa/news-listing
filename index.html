@@ -2,17 +2,17 @@
 <html ng-app="dotCMSApp">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=9">
-  <title>Grunt Angular Boilerplate</title>
-  <meta content="maximum-scale=1.0, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="styles/css/styles.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <title>Grunt Angular Boilerplate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/css/styles.css">
 </head>
 
 <body>
   <div class="page-container" ng-controller="mainController">
     <div class="main-header">
-        <div class="menu-icon" ng-click="toggleLeftMenu(true)">
+        <div class="menu-icon" ng-click="toggleLeftMenu(true)" ng-show="headerButton.showMenu">
             <div></div>
             <div></div>
             <div></div>
