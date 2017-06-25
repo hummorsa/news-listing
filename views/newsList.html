@@ -2,27 +2,36 @@
     <ul id="news-list" class="news-cell" >
         <div class="news-list-close-icon" ng-click="toggleLeftMenu()"></div>
         <li ng-repeat="news in newsList" ng-click="loadContent($index)" ng-class="{selected:selectedIndex===$index}">
-            <img ng-src="https://demo.dotcms.com{{news.image}}" image-fall-back="https://dummyimage.com/62x45.jpg">
+            <img ng-src="https://demo.dotcms.com/contentAsset/image/{{news.inode}}/image/byInode/1/filter/Resize/resize_w/60" image-fall-back="https://dummyimage.com/62x45.jpg">
             <div class="news-list-item-details">
                 <h5>{{news.title}}</h5>
                 <span>{{news.sysPublishDate | ConvertDateFormat : 'MMM dd, yyyy'  }}</span>
+                {{news.sysPublishDate}}
             </div>
         </li>
+        <div class="news-list-pagination" ng-if="newsList.length > 0">
+            <button ng-click="paginationLoad(false)" ng-disabled="pagination.previous" >Previous</button>
+            <button ng-click="paginationLoad(true)" ng-disabled="pagination.next" >Next</button>
+        </div>
+        <div class="empty-results" ng-if="newsList.length == 0">
+            <span>Empty Results</span>
+        </div>
     </ul>
-    <div class="news-item-container news-cell" ng-show="currentNews">
-        <div class="news-item-container-header-image">
-            <img ng-src="https://demo.dotcms.com{{currentNews.image}}" image-fall-back="https://dummyimage.com/600x400/ccc/&text=Place+Holder">
-        </div>
-        <!--<img class="news-item-container-header-image" src="https://dummyimage.com/670x300.jpg"/> -->
-        <div class="news-item-header">
-            <h2>{{currentNews.title}}</h2>
-            <span>{{currentNews.sysPublishDate | ConvertDateFormat : 'MMM dd, yyyy'  }}</span>
-        </div>
-
-        <!--{{currentNews}} -->
-
-        <!--<img ng-src="http://demo.dotcms.com{{currentNews.image}}"> -->
-        <div class="news-item-story" ng-bind-html="currentNews.story">
+    <div class="news-item-container news-cell" >
+       <div ng-show="currentNews">
+           <div class="news-item-container-header-image">
+               <img ng-src="https://demo.dotcms.com/contentAsset/image/{{currentNews.inode}}/image/byInode/1/filter/Resize/resize_w/670" image-fall-back="https://dummyimage.com/600x400/ccc/&text=Place+Holder">
+           </div>
+           <div class="news-item-header">
+               <h2>{{currentNews.title}}</h2>
+               <span>{{currentNews.sysPublishDate | ConvertDateFormat : 'MMM dd, yyyy'  }}</span>
+           </div>
+           <!--  {{currentNews}} -->
+           <div class="news-item-story" ng-bind-html="currentNews.story">
+           </div>
+       </div>
+        <div class="empty-results" ng-if="newsList.length == 0">
+            <span>Empty Results</span>
         </div>
     </div>
 </div>

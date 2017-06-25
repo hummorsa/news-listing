@@ -20,7 +20,7 @@ dotCMSApp.controller('mainController', ['$scope','$location', function($scope,$l
         if(open){
             document.getElementById('news-list').style.width='70%';
         }else{
-            document.getElementById('news-list').style.width='0px';
+            document.getElementById('news-list').style.width='0%';
         }
     };
 
