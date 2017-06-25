@@ -5,7 +5,7 @@
             <img ng-src="https://demo.dotcms.com/contentAsset/image/{{news.inode}}/image/byInode/1/filter/Resize/resize_w/60" image-fall-back="https://dummyimage.com/62x45.jpg">
             <div class="news-list-item-details">
                 <h5>{{news.title}}</h5>
-                <span>{{news.sysPublishDate | ConvertDateFormat : 'MMM dd, yyyy'}}</span>
+                <span>{{news.modDate | ConvertDateFormat : 'MMM dd, yyyy'}}</span>
             </div>
         </li>
         <div class="news-list-pagination" ng-if="newsList.length > 0">
@@ -23,7 +23,7 @@
            </div>
            <div class="news-item-header">
                <h2>{{currentNews.title}}</h2>
-               <span>{{currentNews.sysPublishDate | ConvertDateFormat : 'MMM dd, yyyy'}}</span>
+               <span>{{currentNews.modDate | ConvertDateFormat : 'MMM dd, yyyy'}}</span>
            </div>
            <div class="news-item-story" ng-bind-html="currentNews.story">
            </div>
