@@ -41,7 +41,6 @@ dotCMSApp.controller('listNewsController',['$scope', 'NewsService','$location',f
         };
     };
 
-
     $scope.paginationLoad = function(direction){ //true next - false previous.
         if (direction){
             $scope.pagination.offSet+=5;
@@ -58,9 +57,4 @@ dotCMSApp.controller('listNewsController',['$scope', 'NewsService','$location',f
             console.log('Error retrieving news')
         });
     };
-
-
-
-
-
 }]);
