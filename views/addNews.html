@@ -21,7 +21,7 @@
             <span>{{errorMessage}}</span>
         </div>
         <div class="add-news-confirmation-buttons">
-            <input type="submit" value="Add"/>
+            <input type="submit" value="{{submitBtn.text}}" ng-disabled="submitBtn.sending"/>
         </div>
     </form>
 </div>

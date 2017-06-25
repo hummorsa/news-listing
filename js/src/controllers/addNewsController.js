@@ -9,10 +9,14 @@ dotCMSApp.controller('addNewsController',['$scope','NewsService','$filter','$loc
         hostfolder:"demo.dotcms.com",
         byline: "Demo Testing",
         topic: "test,demo,angular"
-    };
+    }, dataForm = new FormData();
     $scope.headerButton.url = '/';
     $scope.headerButton.text='Home';
     $scope.headerButton.showMenu=false;
+    $scope.submitBtn = {
+        text:'Add',
+        sending:false
+    };
 
     $scope.validate = function() {
         angular.forEach($scope.addItem.$error.required, function(field) {
@@ -20,9 +24,10 @@ dotCMSApp.controller('addNewsController',['$scope','NewsService','$filter','$loc
         });
         var uploadedFile = document.getElementById('file');
         if ($scope.addItem.$valid && uploadedFile.files.length > 0){
-
-            var dataForm = new FormData();
-
+            $scope.submitBtn = {
+                text:'Sending Data...',
+                sending:true
+            };
             $scope.item.urlTitle=$scope.item.title.replace(/\s/g ,"-")
             $scope.item.sysPublishDate= new Date();
             angular.extend($scope.item, dataDefaults);
@@ -33,6 +38,10 @@ dotCMSApp.controller('addNewsController',['$scope','NewsService','$filter','$loc
                 $scope.errorMessage=null;
             },function(error){
                 $scope.errorMessage='Error Uploading the news';
+                $scope.submitBtn = {
+                    text:'Add',
+                    sending:false
+                };
             });
 
         }else{
